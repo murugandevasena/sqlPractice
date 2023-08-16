@@ -1,0 +1,85 @@
+select * from student;
+select s_name,gender from student;
+select * from student limit 3;
+
+-- select * from student where gender ='female';
+select * from student where gender like 'female';
+
+select * from student where s_name like 's%';
+
+select * from student where s_name like '%a';
+
+select * from student where length(s_name) >6;
+
+select * from student where s_name like '%a' and gender like 'female';
+
+
+select * from student where s_name like '%n' or s_name like '%a';
+
+select max(id) as MaxId from student;
+
+select min(id) as MinId from student;
+
+select * from student where f_id = (select max(f_id) from student);
+
+select * from student where s_name in ('devasena','murugan','divya');
+
+select count(gender) as FemaleCount from student where gender like 'Female';
+
+select * from department where fees between 30000 and 40000;
+
+select * from department where fees >=30000 and fees <=40000;
+
+select fees from department order by fees asc;
+
+select fees from department order by fees desc;
+
+
+select * from student where gender like 'male' limit 3;
+
+select * from student where gender like 'male' limit 1,2;
+
+select sum(id) as sumOfId from student;
+
+select gender,count(gender) GenderCount from student group by gender;
+
+select max(fees) from department where fees <(select max(fees) from department);
+
+select fees from department order by fees desc limit 1,1;
+
+select * from department join student on department.id = student.f_id;
+
+insert into student(s_name,gender,f_id) values ('Mental','Female',12);
+
+
+select * from department left join student on department.id = student.f_id;
+
+select * from department right join student on department.id = student.f_id;
+
+update student student set f_id =12 where id=2;
+
+select * from student;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
